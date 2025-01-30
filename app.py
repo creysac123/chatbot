@@ -1,19 +1,14 @@
 import streamlit as st
 import requests
-import os
 from datetime import datetime
-from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
-
-# API Key and URL from environment variables
-API_KEY = os.getenv("API_KEY")
-API_URL = os.getenv("API_URL")
+# API Key and URL from Streamlit secrets
+API_KEY = st.secrets["API_KEY"]
+API_URL = st.secrets["API_URL"]
 
 # Ensure the API Key and URL are set
 if not API_KEY or not API_URL:
-    st.error("API_KEY or API_URL is missing! Make sure your .env file contains them.")
+    st.error("API_KEY or API_URL is missing! Make sure your Streamlit Cloud secrets contain them.")
     st.stop()
 
 # Function to fetch API key (we are now using environment variable)
