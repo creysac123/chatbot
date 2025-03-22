@@ -25,7 +25,7 @@ def chat_with_model(prompt, conversation_history=None, temperature=0.7, max_toke
     }
     
     payload = {
-        "model": "mixtral-8x7b-32768",
+        "model": "mistral-saba-24b",
         "temperature": temperature,
         "max_tokens": max_tokens,
         "messages": conversation_history + [{"role": "user", "content": prompt}]
@@ -49,7 +49,7 @@ def main():
     # Sidebar for settings
     st.sidebar.title("Settings")
     temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.7, 0.05)
-    max_tokens = st.sidebar.slider("Max Tokens", 50, 500, 200, 10)
+    max_tokens = st.sidebar.slider("Max Tokens", 50, 2000, 500, 50)
 
     # Title
     st.title("🤖 Creysac's AI Assistant")
