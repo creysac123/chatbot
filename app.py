@@ -25,7 +25,7 @@ def chat_with_model(prompt, conversation_history=None, temperature=0.7, max_toke
     }
     
     payload = {
-        "model": "llama3-8b-8192",
+        "model": "mixtral-8x7b-32768",
         "temperature": temperature,
         "max_tokens": max_tokens,
         "messages": conversation_history + [{"role": "user", "content": prompt}]
