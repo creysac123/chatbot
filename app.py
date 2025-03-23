@@ -25,7 +25,7 @@ def chat_with_model(prompt, conversation_history=None, temperature=0.7, max_toke
     }
     
     payload = {
-        "model": "mistral-saba-24b",
+        "model": "deepseek-r1-distill-qwen-32b",
         "temperature": temperature,
         "max_tokens": max_tokens,
         "messages": conversation_history + [{"role": "user", "content": prompt}]
