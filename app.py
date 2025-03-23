@@ -49,7 +49,9 @@ def main():
     # Sidebar for settings
     st.sidebar.title("Settings")
     temperature = st.sidebar.slider("Temperature", 0.0, 1.0, 0.7, 0.05)
-    max_tokens = st.sidebar.slider("Max Tokens", 50, 2000, 500, 50)
+    max_tokens = st.sidebar.slider("Max Tokens", 1000, 128000, 5000, 200)
+    #st.sidebar.caption("LLaMA 3.3 70B supports up to 128,000 tokens. Higher values allow longer responses but reduce memory for earlier context.")
+
 
     # Title
     st.title("🤖 Creysac's AI Assistant")
